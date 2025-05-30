@@ -36,4 +36,6 @@ def format_number(number: int | str) -> str:
 
 
 def get_static_files_path() -> str:
-    return str(Path("./static").absolute())
+    static_path = Path("./static").absolute()
+    static_path.mkdir(parents=True, exist_ok=True)
+    return str(static_path)
